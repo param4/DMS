@@ -3,6 +3,7 @@ from cgitb import small
 
 class ArrayRotation:
     def rotate_arr(self, A, D, N):
+        D= D%N
         self.reverse(A, 0 , N-1)
         self.reverse(A, 0 , N-D-1)
         self.reverse(A, N-D , N-1)

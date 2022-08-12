@@ -3,6 +3,7 @@ from cgitb import small
 
 class ArrayRotation:
     def rotate_arr(self, A, D, N):
+        D= D%N
         gcd = self.gcd(D, N)
         for i in range(gcd):
             temp = A[i]
