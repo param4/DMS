@@ -1,12 +1,12 @@
 class Search:
-    def exponential_search(self, nums, target):
+    def jump_search(self, nums, target, jump_by = 3):
         ind = 1
         while True:
             if ind >= len(nums):
                 return -1
             elif nums[ind]< target:
                 break
-            ind *= 2
+            ind += jump_by
         return self.binary_search_helper(nums, target, ind, len(nums) - 1)
 
     def binary_search_helper(self, nums, target, left, right):
@@ -26,5 +26,5 @@ nums = nums.split()
 nums = [int(num) for num in nums]
 
 search = Search()
-ind = search.exponential_search(nums, target)
+ind = search.jump_search(nums, target)
 print(ind)
